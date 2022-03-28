@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Table Layout</title>
+    <link href="css/TableLayout.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Your Shopping Cart</h1>
+      <table>
+        <thead>
+          <tr>
+            <th class="item-col">ITEM</th>
+            <th>AMOUNT</th>
+            <th>PRICE</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-col">
+              <img src="images/lost-items.png" />
+              <div>
+                <p class="item-place">고려대학교</p>
+                <p class="item-exp">LOST ITEM AT College of Informatics</p>
+              </div>
+            </td>
+            <td>1</td>
+            <td>38,900원</td>
+            <td class="total-cost">38,900원</td>
+          </tr>
+          <tr>
+            <td class="item-col">
+              <img src="images/lost-items.png" />
+              <div>
+                <p class="item-place">고려대학교</p>
+                <p class="item-exp">LOST ITEM AT Dept. of Life Science</p>
+              </div>
+            </td>
+            <td>1</td>
+            <td>10,000원</td>
+            <td class="total-cost">10,000원</td>
+          </tr>
+          <tr class="final-row">
+            <td colspan="4">48,900원</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="item-decision">
+        <div><a href="#">Edit your shopping cart</a></div>
+        <button>Choose Payment Method</button>
+      </div>
+    </div>
+  </body>
+</html>

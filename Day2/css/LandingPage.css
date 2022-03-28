@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+}
+
+.introduce-offer h2,
+.introduce-offer h5 {
+  margin: 0 auto;
+  color: white;
+  font-weight: normal;
+}
+
+.introduce-wrapper {
+  width: 100vw;
+  height: 1000px;
+  padding-top: 1px;
+  background: #0052d4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #6fb1fc,
+    #4364f7,
+    #0052d4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #6fb1fc,
+    #4364f7,
+    #0052d4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.introduce-contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  height: fit-content;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introduce-writings {
+  width: 400px;
+  height: fit-content;
+  color: white;
+  padding-top: 1px;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background-color: rgb(48, 48, 46);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.introduce-image {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.introduce-image img {
+  width: 320px;
+  height: 400px;
+}
+
+.introduce-interrupt {
+  background-color: white;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.introduce-interrupt p:first-child {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.introduce-offer {
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer-items {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 35px;
+}
+
+.item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item p {
+  color: white;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.item-category {
+  font-size: 20px;
+}
+
+.item i {
+  color: #0653d7;
+  background: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  line-height: 80px;
+  text-align: center;
+}
+
+.portfolio-wrapper {
+  width: 100vw;
+  height: fit-content;
+  padding-top: 70px;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.port-header {
+  margin: 0 auto;
+}
+
+.port-header:nth-child(2) {
+  margin-bottom: 30px;
+}
+
+.portfolio-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.row-item {
+  background-size: cover;
+  position: relative;
+  width: 480px;
+  height: 360px;
+}
+
+.first {
+  background-image: url(/images/bg1.jpeg);
+}
+
+.second {
+  background-image: url(/images/bg2.jpeg);
+}
+
+.third {
+  background-image: url(/images/bg3.jpeg);
+}
+
+.fourth {
+  background-image: url(/images/bg4.jpeg);
+}
+
+section {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  width: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding-left: 35px;
+  padding-top: 35px;
+  background: rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.4s;
+}
+
+section:hover {
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255);
+  transition: box-shadow 0.4s;
+}
+
+footer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.footer-icons {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-icons i {
+  font-size: 20px;
+  background: #0653d7;
+  color: white;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  .introduce-wrapper {
+    height: fit-content;
+  }
+  .introduce-contents {
+    flex-direction: column;
+    align-items: center;
+  }
+  .introduce-writings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .offer-items {
+    width: 60%;
+  }
+  .item {
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .introduce-writings,
+  .introduce-image {
+    width: 80%;
+  }
+}
