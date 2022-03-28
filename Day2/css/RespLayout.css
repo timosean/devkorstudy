@@ -20,7 +20,7 @@ body {
   align-items: center;
 }
 
-.flex-item > div:first-child {
+.flex-item div:first-child {
   margin-bottom: 20px;
   font-weight: bold;
 }

@@ -163,19 +163,19 @@ button {
 }
 
 .first {
-  background-image: url(/images/bg1.jpeg);
+  background-image: url(../images/bg1.jpeg);
 }
 
 .second {
-  background-image: url(/images/bg2.jpeg);
+  background-image: url(../images/bg2.jpeg);
 }
 
 .third {
-  background-image: url(/images/bg3.jpeg);
+  background-image: url(../images/bg3.jpeg);
 }
 
 .fourth {
-  background-image: url(/images/bg4.jpeg);
+  background-image: url(../images/bg4.jpeg);
 }
 
 section {

@@ -31,6 +31,10 @@ tr {
   height: 100px;
 }
 
+.final-row {
+  border-bottom: none;
+}
+
 th {
   color: #00007c;
   letter-spacing: 3px;
