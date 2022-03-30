@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Apple Gothic";
+  src: url(/Fonts/AppleSDGothicNeoR.woff);
+}
+
+@font-face {
+  font-family: "Apple Gothic Bold";
+  src: url(/Fonts/AppleSDGothicNeoB.woff);
+}
+
+@font-face {
+  font-family: "Apple Gothic ExtraBold";
+  src: url(/Fonts/AppleSDGothicNeoEB.woff);
+}
+
+body {
+  font-family: "Apple Gothic";
+  margin: 0;
+}
+
+.card {
+  transition-property: box-shadow transform;
+  transition-duration: 0.2s;
+}
+.card:hover {
+  transition: box-shadow transform 0.2s;
+  transform: translateY(-5px);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.card-title {
+  font-family: "Apple Gothic Bold";
+  color: grey;
+}
+
+.card-text {
+  font-family: "Apple Gothic Bold";
+}
+
+.card-subtitle {
+  font-size: 12px;
+}
