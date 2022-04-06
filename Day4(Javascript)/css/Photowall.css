@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    color: white;
+    font-size: 40px;
+    margin-left: 40px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.7);
+    display: none;
+    cursor: none;
+}
+
+.wrapper {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.photo {
+    width: 5%;
+    height: 60%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.selected {
+    width: 75%;
+}
+
+.photo.selected h3 {
+    display: block;
+}
+
+.sea {
+    background-image: url('../images/sea.PNG');
+    background-size: cover;
+}
+
+.forest {
+    background-image: url('../images/forest.PNG');
+    background-size: cover;
+}
+
+.beach {
+    background-image: url('../images/beach.PNG');
+    background-size: cover;
+}
+
+.city {
+    background-image: url('../images/city.PNG');
+    background-size: cover;
+}
+
+.mountain {
+    background-image: url('../images/mt.PNG');
+    background-size: cover;
+}
