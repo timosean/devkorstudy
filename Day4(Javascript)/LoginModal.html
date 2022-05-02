@@ -14,7 +14,7 @@
     />
     <link href="/css/LoginModal.css" rel="stylesheet" />
 
-    <title>Hello, world!</title>
+    <title>Login Modal</title>
   </head>
   <body>
     <div class="black-bg">
@@ -34,50 +34,38 @@
       </div>
     </div>
 
-    <h2>Log-In</h2>
-    <button type="button" class="btn btn-primary loginbtn">로그인</button>
-    <div class="badge bg-dark">다크모드🌜</div>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">SEUNGWOO</span>
+        <span class="ms-auto mx-3 badge bg-dark">다크모드🌜</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
 
-    <script>
-      document
-        .querySelector(".loginbtn")
-        .addEventListener("click", function () {
-          document.querySelector(".black-bg").classList.add("show-modal");
-        });
+    <div class="login-container">
+      <h2>Log-In</h2>
+      <button type="button" class="btn btn-primary loginbtn">로그인</button>
+    </div>
 
-      document.querySelector(".close").addEventListener("click", function () {
-        document.querySelector(".black-bg").classList.remove("show-modal");
-      });
+    <div style="width: 200px; height: 100px; overflow-y: scroll" id="clause">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ratione,
+      aliquid nihil neque magnam quam modi itaque repellendus perferendis sed
+      nemo eligendi, fuga eaque omnis doloribus. Suscipit nemo atque iure!
+    </div>
 
-      document.querySelector("form").addEventListener("submit", function (e) {
-        const idInput = document.querySelector("#id");
-        const pwInput = document.querySelector("#pw");
-        if (idInput.value == "" || pwInput.value == "") {
-          e.preventDefault();
-          alert("내용을 입력해주세요");
-        } else if (pwInput.value.length < 6) {
-          e.preventDefault();
-          alert("비밀번호는 최소 6글자 이상 입력해주세요.");
-        }
-      });
+    <div class="alert alert-danger">
+      <span class="sec">5</span>초 이내 구매시 사은품 증정!!
+    </div>
 
-      var count = 0;
-      const badge = document.querySelector(".badge");
-      badge.addEventListener("click", function () {
-        count++;
-
-        if (count % 2) {
-          badge.innerText = `다크모드🌜`;
-        } else {
-          badge.innerText = `라이트모드🌞`;
-        }
-      });
-    </script>
+    <div style="height: 10000px"></div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="/script/LoginModal.js"></script>
   </body>
 </html>
