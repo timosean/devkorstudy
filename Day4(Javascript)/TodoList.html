@@ -3,10 +3,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/TodoList.css" rel="stylesheet" />
     <title>Todo-List</title>
   </head>
   <body>
+    <section class="todo-edit">
+      <div class="edit-box">
+        <h1 id="edit-title">수정하기</h1>
+        <input id="edit-content" placeholder="수정할 내용을 입력해주세요." />
+        <div class="edit-buttons">
+          <button type="button" id="cancel">취소</button>
+          <button type="button" id="submit">완료</button>
+        </div>
+      </div>
+    </section>
     <div class="main-container">
       <h1 id="title">My Todo-List</h1>
       <div class="todo-container">
@@ -17,18 +31,21 @@
           </div>
           <div class="left-todos">
               <span>할 일</span>
-              <span>2개 남음</span>
+              <span id="left-num">2개 남음</span>
         </section>
 
         <section class="add-todo">
-          <input placeholder="추가할 일을 입력해주세요." />
-          <button type="button">추가하기</button>
+          <input placeholder="추가할 일을 입력해주세요." id="addcontent" />
+          <button type="button" id="addbtn">추가하기</button>
         </section>
 
         <section class="todo-list">
-            <div class="todo-item">
-                adfadfs
-            </div>
+          <div class="todo-item">
+            <i class="fa-regular fa-circle-check"></i> <span>추가된 할 일 1</span> <i class="fa-solid fa-pencil"></i><i class="fa-solid fa-trash"></i>
+          </div>
+          <div class="todo-item">
+            <i class="fa-regular fa-circle-check"></i> <span>추가된 할 일 2</span> <i class="fa-solid fa-pencil"></i><i class="fa-solid fa-trash"></i>
+          </div>
         </section>
       </div>
     </div>
