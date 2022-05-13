@@ -48,3 +48,9 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+input {
+  width: 200px;
+  height: 40px;
+  margin-right: 10px;
+}
