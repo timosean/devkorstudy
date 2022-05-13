@@ -24,7 +24,7 @@ function App() {
   };
 
   const title_3_change = () => {
-    var newPost = { ...post };
+    var newPost = [...post];
     newPost[2] = "신촌 맛집";
     setPost(newPost);
   };
