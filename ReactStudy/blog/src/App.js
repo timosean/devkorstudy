@@ -1,9 +1,20 @@
 import "./App.css";
 import { useState } from "react";
-import { NavItem } from "react-bootstrap";
+
+function Modal({ title, setModal }) {
+  return (
+    <div className="modal">
+      <h2>{title}</h2>
+      <p>날짜</p>
+      <p>상세내용</p>
+      <button onClick={() => setModal(false)}>닫기</button>
+    </div>
+  );
+}
 
 function App() {
-  let [post, setPost] = useState(["강남 맛집", "정후 맛집", "안암 맛집"]);
+  let [post, setPost] = useState(["강남 맛집", "우동 맛집", "초밥 맛집"]);
+  let [modal, setModal] = useState(true);
 
   const onSort = () => {
     console.log("정렬 전 post배열 상태", post);
@@ -34,22 +45,14 @@ function App() {
       <div className="black-nav">
         <h1>React Blog</h1>
       </div>
-      <div className="list">
-        <h2>{post[0]}</h2>
-        <p>2월 17일 발행</p>
-        <button onClick={title_1_change}>수정</button>
-      </div>
-      <div className="list">
-        <h2>{post[1]}</h2>
-        <p>2월 17일 발행</p>
-        <button onClick={title_2_change}>수정</button>
-      </div>
-      <div className="list">
-        <h2>{post[2]}</h2>
-        <p>2월 17일 발행</p>
-        <button onClick={title_3_change}>수정</button>
-      </div>
-      <hr />
+      {post.map((pitem) => (
+        <div className="list">
+          <h2 onClick={() => setModal(false)}>{pitem}</h2>
+          <div className="plus">더보기</div>
+          {modal && <Modal title={pitem} setModal={setModal} />}
+          <p>2월 17일 발행</p>
+        </div>
+      ))}
       <button onClick={onSort}>정렬</button>
     </div>
   );
