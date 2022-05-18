@@ -1,20 +1,35 @@
 import "./App.css";
 import { useState } from "react";
 
-function Modal({ title, setModal }) {
+function Modal({ title, onToggleModal, modifyTitle, idx }) {
   return (
     <div className="modal">
       <h2>{title}</h2>
       <p>날짜</p>
       <p>상세내용</p>
-      <button onClick={() => setModal(false)}>닫기</button>
+      <button onClick={() => modifyTitle(idx)}>수정</button>
+      <button onClick={() => onToggleModal(idx)}>닫기</button>
     </div>
   );
 }
 
 function App() {
   let [post, setPost] = useState(["강남 맛집", "우동 맛집", "초밥 맛집"]);
-  let [modal, setModal] = useState(true);
+  let modified = ["홍대 맛집", "라멘 맛집", "수제버거 맛집"];
+  let [modal, setModal] = useState([true, true, true]);
+
+  const modifyTitle = (idx) => {
+    var newPost = [...post];
+    newPost[idx] = modified[idx];
+    setPost(newPost);
+    console.log("modifyTitle_clicked!");
+  };
+
+  const onToggleModal = (idx) => {
+    var newModals = [...modal];
+    newModals[idx] = !newModals[idx];
+    setModal(newModals);
+  };
 
   const onSort = () => {
     console.log("정렬 전 post배열 상태", post);
@@ -24,19 +39,19 @@ function App() {
 
   const title_1_change = () => {
     var newPost = [...post];
-    newPost[0] = "강북 맛집";
+    newPost[0] = "홍대 맛집";
     setPost(newPost);
   };
 
   const title_2_change = () => {
     var newPost = [...post];
-    newPost[1] = "참살이 맛집";
+    newPost[1] = "라멘 맛집";
     setPost(newPost);
   };
 
   const title_3_change = () => {
     var newPost = [...post];
-    newPost[2] = "신촌 맛집";
+    newPost[2] = "수제버거 맛집";
     setPost(newPost);
   };
 
@@ -45,12 +60,21 @@ function App() {
       <div className="black-nav">
         <h1>React Blog</h1>
       </div>
-      {post.map((pitem) => (
+      {post.map((pitem, idx) => (
         <div className="list">
-          <h2 onClick={() => setModal(false)}>{pitem}</h2>
-          <div className="plus">더보기</div>
-          {modal && <Modal title={pitem} setModal={setModal} />}
+          <h2>{pitem}</h2>
           <p>2월 17일 발행</p>
+          <div className="plus" onClick={() => onToggleModal(idx)}>
+            더보기
+          </div>
+          {modal[idx] && (
+            <Modal
+              title={pitem}
+              onToggleModal={onToggleModal}
+              modifyTitle={modifyTitle}
+              idx={idx}
+            />
+          )}
         </div>
       ))}
       <button onClick={onSort}>정렬</button>
