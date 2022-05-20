@@ -16,13 +16,13 @@ function Modal({ title, onToggleModal, modifyTitle, idx }) {
 function App() {
   let [post, setPost] = useState(["강남 맛집", "우동 맛집", "초밥 맛집"]);
   let modified = ["홍대 맛집", "라멘 맛집", "수제버거 맛집"];
-  let [modal, setModal] = useState([true, true, true]);
+  let [modal, setModal] = useState([false, false, false]);
+  let [text, setText] = useState("");
 
   const modifyTitle = (idx) => {
     var newPost = [...post];
     newPost[idx] = modified[idx];
     setPost(newPost);
-    console.log("modifyTitle_clicked!");
   };
 
   const onToggleModal = (idx) => {
@@ -37,21 +37,17 @@ function App() {
     setPost(newPost.sort());
   };
 
-  const title_1_change = () => {
+  const onAddPost = () => {
+    console.log("Add Post Complete!");
     var newPost = [...post];
-    newPost[0] = "홍대 맛집";
-    setPost(newPost);
+    setPost(newPost.concat(text));
+    setText("");
+    document.querySelector("#text").value = "";
   };
 
-  const title_2_change = () => {
+  const onDeletePost = (idx) => {
     var newPost = [...post];
-    newPost[1] = "라멘 맛집";
-    setPost(newPost);
-  };
-
-  const title_3_change = () => {
-    var newPost = [...post];
-    newPost[2] = "수제버거 맛집";
+    newPost.splice(idx, 1);
     setPost(newPost);
   };
 
@@ -67,6 +63,9 @@ function App() {
           <div className="plus" onClick={() => onToggleModal(idx)}>
             더보기
           </div>
+          <div className="plus" onClick={() => onDeletePost(idx)}>
+            삭제
+          </div>
           {modal[idx] && (
             <Modal
               title={pitem}
@@ -78,6 +77,8 @@ function App() {
         </div>
       ))}
       <button onClick={onSort}>정렬</button>
+      <input type="text" id="text" onChange={(e) => setText(e.target.value)} />
+      <button onClick={onAddPost}>등록</button>
     </div>
   );
 }
